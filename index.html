@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรไฟล์ข้อมูลส่วนตัว</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .profile-card {
+            max-width: 600px;
+            margin: 50px auto;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* ส่วนรูปภาพโปรไฟล์ */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .nickname {
+            font-size: 18px;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
+        }
+
+        /* ส่วนข้อมูลประวัติ */
+        .about-section {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .about-section h3 {
+            color: #4CAF50;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .info-list strong {
+            color: #34495e;
+            display: inline-block;
+            width: 120px;
+        }
+
+        /* ส่วนปุ่มติดต่อ */
+        .contact-btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-top: 15px;
+        }
+
+        .contact-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <img src="https://scontent.fbkk12-1.fna.fbcdn.net/v/t51.82787-15/730331495_18118194950500676_6415343856988786919_n.jpg?stp=dst-jpg_tt6&cstp=mx1170x1560&ctp=s1170x1560&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9p7pUNY88SUQ7kNvwEioTDF&_nc_oc=Adqw8trGBDXdb2eh9OoUlEve77YIkHK_WG0NPsVh5oTMUwGwVn8YJHWobySBE5TCS9g&_nc_zt=23&_nc_ht=scontent.fbkk12-1.fna&_nc_gid=jSsu9HxuqD67iTq3mbET5g&_nc_ss=7b2a8&oh=00_AQAkeCWHo-OsZIC1twN-5uXsI0CfqgCNPWQhOQ8Welyjnw&oe=6A5275A6" alt="รูปภาพโปรไฟล์" class="profile-img">
+        
+        <h1>นายกิตติพิพัฒน์ เมสิทธิ์ธา</h1>
+        <p class="nickname">(wave)</p>
+        
+        <hr>
+
+        <div class="about-section">
+            <h3>ประวัติส่วนตัว (About Me)</h3>
+            <p>สวัสดีครับ ผมเป็นคนที่สนใจในด้านเทคโนโลยีและการพัฒนาเว็บไซต์ มีความกระตือรือร้นในการเรียนรู้สิ่งใหม่ๆ อยู่เสมอ และชอบใช้เวลาว่างในการศึกษาเทรนด์ใหม่ๆ ของโลกดิจิทัลครับ</p>
+        </div>
+
+        <hr>
+
+        <div class="about-section">
+            <h3>ข้อมูลทั่วไป</h3>
+            <ul class="info-list">
+                <li><strong>วันเกิด:</strong>24 กุมภาพันธ์ 2549</li>
+                <li><strong>อายุ:</strong> 20 ปี</li>
+                
+              <li><strong>ทักษะที่:</strong> basketball </li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <a href="saken.20279@email.com" class="contact-btn">ติดต่อฉัน</a>
+    </div>
+
+</body>
+</html>
