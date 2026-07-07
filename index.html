@@ -13,127 +13,384 @@
         }
 
         body {
-            background-color: #f4f7f6;
+            background-color: #f0f4f8;
             color: #333;
             line-height: 1.6;
             padding: 20px;
         }
 
-        .profile-card {
-            max-width: 600px;
-            margin: 50px auto;
+        .profile-container {
+            max-width: 750px;
+            margin: 40px auto;
             background: #ffffff;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             overflow: hidden;
-            text-align: center;
-            padding: 30px;
+            padding: 40px;
         }
 
-        /* ส่วนรูปภาพโปรไฟล์ */
+        /* ส่วนหัวและรูปภาพ */
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid #4CAF50;
+            border: 6px solid #2bc48a;
             margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         h1 {
-            font-size: 28px;
-            color: #2c3e50;
+            font-size: 32px;
+            color: #1a2a3a;
             margin-bottom: 5px;
         }
 
-        .nickname {
+        .subtitle {
             font-size: 18px;
-            color: #7f8c8d;
-            margin-bottom: 20px;
+            color: #2bc48a;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
         hr {
             border: 0;
             height: 1px;
-            background: #eee;
-            margin: 20px 0;
+            background: #e2e8f0;
+            margin: 30px 0;
         }
 
-        /* ส่วนข้อมูลประวัติ */
-        .about-section {
-            text-align: left;
-            margin-bottom: 20px;
+        .section-title {
+            color: #1a2a3a;
+            font-size: 22px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 15px;
         }
 
-        .about-section h3 {
-            color: #4CAF50;
-            margin-bottom: 10px;
-            font-size: 20px;
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            height: 22px;
+            width: 5px;
+            background-color: #2bc48a;
+            border-radius: 3px;
         }
 
+        /* ข้อมูลทั่วไป */
         .info-list {
             list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
         }
 
         .info-list li {
-            margin-bottom: 10px;
             font-size: 16px;
+            background: #f8fafc;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #cbd5e1;
         }
 
         .info-list strong {
-            color: #34495e;
+            color: #475569;
             display: inline-block;
-            width: 120px;
+            width: 110px;
         }
 
-        /* ส่วนปุ่มติดต่อ */
-        .contact-btn {
-            display: inline-block;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 25px;
+        /* ประวัติการศึกษา */
+        .education-timeline {
+            margin-top: 15px;
+            padding-left: 10px;
+        }
+
+        .edu-item {
+            border-left: 2px solid #2bc48a;
+            padding-left: 20px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .edu-item::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #2bc48a;
+        }
+
+        .edu-year {
+            font-size: 14px;
             font-weight: bold;
-            transition: background 0.3s;
+            color: #2bc48a;
+        }
+
+        .edu-school {
+            font-size: 16px;
+            font-weight: bold;
+            color: #334155;
+        }
+
+        /* ตารางผลการเรียน */
+        .grade-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+
+        .grade-table th, .grade-table td {
+            border: 1px solid #e2e8f0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .grade-table th {
+            background-color: #f8fafc;
+            color: #1a2a3a;
+            font-weight: 600;
+        }
+
+        .grade-highlight {
+            font-weight: bold;
+            color: #2bc48a;
+        }
+
+        /* ทักษะความสามารถ */
+        .skill-container {
             margin-top: 15px;
         }
 
+        .skill-each {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .bar-bg {
+            background: #e2e8f0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            background: linear-gradient(90deg, #2bc48a, #23a975);
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        /* ผลงาน / กิจกรรม */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .project-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 15px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .project-card h4 {
+            color: #1a2a3a;
+            margin-bottom: 5px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        /* ปุ่มติดต่อและส่วนท้าย */
+        .contact-area {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            background-color: #1a2a3a;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
         .contact-btn:hover {
-            background-color: #45a049;
+            background-color: #2bc48a;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #94a3b8;
         }
     </style>
 </head>
 <body>
 
-    <div class="profile-card">
-        <img src="https://scontent.fbkk12-1.fna.fbcdn.net/v/t51.82787-15/730331495_18118194950500676_6415343856988786919_n.jpg?stp=dst-jpg_tt6&cstp=mx1170x1560&ctp=s1170x1560&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9p7pUNY88SUQ7kNvwEioTDF&_nc_oc=Adqw8trGBDXdb2eh9OoUlEve77YIkHK_WG0NPsVh5oTMUwGwVn8YJHWobySBE5TCS9g&_nc_zt=23&_nc_ht=scontent.fbkk12-1.fna&_nc_gid=jSsu9HxuqD67iTq3mbET5g&_nc_ss=7b2a8&oh=00_AQAkeCWHo-OsZIC1twN-5uXsI0CfqgCNPWQhOQ8Welyjnw&oe=6A5275A6" alt="รูปภาพโปรไฟล์" class="profile-img">
+    <div class="profile-container">
         
-        <h1>นายกิตติพิพัฒน์ เมสิทธิ์ธา</h1>
-        <p class="nickname">(wave)</p>
-        
-        <hr>
-
-        <div class="about-section">
-            <h3>ประวัติส่วนตัว (About Me)</h3>
-            <p>สวัสดีครับ ผมเป็นคนที่สนใจในด้านเทคโนโลยีและการพัฒนาเว็บไซต์ มีความกระตือรือร้นในการเรียนรู้สิ่งใหม่ๆ อยู่เสมอ และชอบใช้เวลาว่างในการศึกษาเทรนด์ใหม่ๆ ของโลกดิจิทัลครับ</p>
+        <!-- ส่วนหัวข้อและรูปภาพโปรไฟล์ตาม URL ที่ระบุ -->
+        <div class="profile-header">
+            <img src="https://scontent.fbkk12-1.fna.fbcdn.net/v/t51.82787-15/730331495_18118194950500676_6415343856988786919_n.jpg?stp=dst-jpg_tt6&cstp=mx1170x1560&ctp=s1170x1560&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=9p7pUNY88SUQ7kNvwEioTDF&_nc_oc=Adqw8trGBDXdb2eh9OoUlEve77YIkHK_WG0NPsVh5oTMUwGwVn8YJHWobySBE5TCS9g&_nc_zt=23&_nc_ht=scontent.fbkk12-1.fna&_nc_gid=5m5ZW8RBxkraOwslq-TO5Q&_nc_ss=7b2a8&oh=00_AQBpLyCnA3vOc5V23lO6cTs457-mKsQpUAPHvcdo-N8aPw&oe=6A52ADE6" alt="รูปภาพโปรไฟล์" class="profile-img">
+            <h1>นายกิตติพิพัฒน์ เมสิทธิ์ธา</h1>
+            <p class="subtitle">นักศึกษาสาขาคอมพิวเตอร์</p>
+            <p style="color: #64748b; max-width: 500px; margin: 0 auto;">"มุ่งมั่นพัฒนาทักษะด้านเทคโนโลยีและความรู้ใหม่ๆ เพื่อก้าวสู่การเป็นนักเขียนโปรแกรมมืออาชีพในอนาคต"</p>
         </div>
-
+        
         <hr>
 
-        <div class="about-section">
-            <h3>ข้อมูลทั่วไป</h3>
+        <!-- ส่วนที่ 1: ข้อมูลทั่วไป (เพิ่มเกรดเฉลี่ยสะสม) -->
+        <div>
+            <h3 class="section-title">ข้อมูลส่วนตัว</h3>
             <ul class="info-list">
-                <li><strong>วันเกิด:</strong>24 กุมภาพันธ์ 2549</li>
                 <li><strong>อายุ:</strong> 20 ปี</li>
-                
-              <li><strong>ทักษะที่:</strong> basketball </li>
+                <li><strong>การศึกษา:</strong> มหาวิทยาลัยกาฬสินธุ์</li>
+                <li><strong>สาขาวิชา:</strong> คอมพิวเตอร์</li>
+                <li><strong>เกรดเฉลี่ยสะสม:</strong> <span class="grade-highlight">3.33</span></li>
+                <li><strong>ช่องทางติดต่อ:</strong> saken.20279@email.com</li>
+                <li><strong>ที่อยู่ปัจจุบัน:</strong> อ.เมือง จ.กาฬสินธุ์</li>
+                <li><strong>งานอดิเรก:</strong> เขียนโค้ด, อ่านบทความไอที, เล่นเกม</li>
             </ul>
         </div>
 
         <hr>
 
-        <a href="saken.20279@email.com" class="contact-btn">ติดต่อฉัน</a>
+        <!-- ส่วนที่ 2: ประวัติการศึกษาและรายละเอียดเกรดเฉลี่ย (เพิ่มเนื้อหาตารางให้ยาวและแน่นขึ้น) -->
+        <div>
+            <h3 class="section-title">ประวัติและผลการเรียน (Education & Grades)</h3>
+            <div class="education-timeline">
+                <div class="edu-item">
+                    <span class="edu-year">ปัจจุบัน</span>
+                    <p class="edu-school">มหาวิทยาลัยกาฬสินธุ์</p>
+                    <p style="font-size: 14px; color: #64748b; margin-bottom: 10px;">กำลังศึกษาระดับปริญญาตรี ชั้นปีที่ 2 สาขาคอมพิวเตอร์</p>
+                    
+                    <!-- ตารางแสดงเกรดแต่ละเทอมเพื่อเพิ่มรายละเอียดและความยาวเว็บ -->
+                    <table class="grade-table">
+                        <thead>
+                            <tr>
+                                <th>ปีการศึกษา / ภาคเรียน</th>
+                                <th>จำนวนหน่วยกิต</th>
+                                <th>เกรดเฉลี่ยประจำเทอม (GPA)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ชั้นปีที่ 1 ภาคเรียนที่ 1</td>
+                                <td>19</td>
+                                <td>3.25</td>
+                            </tr>
+                            <tr>
+                                <td>ชั้นปีที่ 1 ภาคเรียนที่ 2</td>
+                                <td>21</td>
+                                <td>3.40</td>
+                            </tr>
+                            <tr>
+                                <td>ชั้นปีที่ 2 ภาคเรียนที่ 1</td>
+                                <td>20</td>
+                                <td>3.35</td>
+                            </tr>
+                            <tr style="background-color: #f0fdf4; font-weight: bold;">
+                                <td colspan="2" style="text-align: right;">เกรดเฉลี่ยสะสมทั้งหมด (GPAX) :</td>
+                                <td class="grade-highlight">3.33</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="edu-item">
+                    <span class="edu-year">พ.ศ. 2564 - 2567</span>
+                    <p class="edu-school">โรงเรียนมัธยมศึกษาตอนปลาย</p>
+                    <p style="font-size: 14px; color: #64748b;">แผนการเรียนวิทยาศาสตร์ - คณิตศาสตร์ (GPAX: 3.50)</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- ส่วนที่ 3: ทักษะความสามารถ -->
+        <div>
+            <h3 class="section-title">ทักษะความสามารถ (Skills)</h3>
+            <div class="skill-container">
+                <div class="skill-each">
+                    <div class="skill-name"><span>HTML / CSS</span><span>80%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="skill-each">
+                    <div class="skill-name"><span>JavaScript</span><span>55%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 55%;"></div></div>
+                </div>
+                <div class="skill-each">
+                    <div class="skill-name"><span>คอมพิวเตอร์เบื้องต้น & Hardware</span><span>75%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- ส่วนที่ 4: ผลงานหรือกิจกรรม -->
+        <div>
+            <h3 class="section-title">ผลงานและกิจกรรมที่เข้าร่วม</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4>My First Website</h4>
+                    <p>โปรเจกต์พัฒนาหน้าเว็บส่วนตัวด้วย HTML และ CSS ชิ้นแรกในห้องเรียน</p>
+                </div>
+                <div class="project-card">
+                    <h4>IT Workshop 2025</h4>
+                    <p>เข้าร่วมอบรมค่ายทักษะคอมพิวเตอร์และการพัฒนาเครือข่ายเทคโนโลยี</p>
+                </div>
+                <div class="project-card">
+                    <h4>Computer Repair</h4>
+                    <p>กิจกรรมอาสาบริการตรวจเช็คและซ่อมบำรุงคอมพิวเตอร์เบื้องต้น</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- ส่วนท้ายปุ่มติดต่อ -->
+        <div class="contact-area">
+            <a href="mailto:somchai@email.com" class="contact-btn">ส่งข้อความหาฉัน</a>
+        </div>
+
+    </div>
+
+    <!-- ลิขสิทธิ์ท้ายหน้าเว็บ -->
+    <div class="footer">
+        <p>© 2026 สมชาย รักดี. All Rights Reserved. | มหาวิทยาลัยกาฬสินธุ์</p>
     </div>
 
 </body>
